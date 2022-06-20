@@ -11,4 +11,4 @@ wheel==0.33.6
 wsidicom>=0.2.0
 zarr==2.11.1
 tqdm>=4.64.0
-wsic
+wsic==0.4.0

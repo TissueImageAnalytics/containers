@@ -1,4 +1,4 @@
-# jp2tiff
+# wsic
 
 Create the Docker container run 
 ```bash

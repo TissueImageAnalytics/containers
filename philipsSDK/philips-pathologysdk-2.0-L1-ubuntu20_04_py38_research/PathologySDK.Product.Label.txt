@@ -1,0 +1,13 @@
+﻿Pathology SDK
+Version 2.0
+2.0 (L 1)
+
+Date of manufacture: 2021-06-10
+Made in The Netherlands
+
+Consult User Documentation
+Consult End User License Agreement for software licensing statement
+
+© Koninklijke Philips N.V.2021.All rights are reserved. 
+
+To the maximum extent permitted by law, you shall not decompile and/or reverse engineer the software or any part thereof.

@@ -1,29 +1,26 @@
 # Philips SDK 2.0 Docker Container
-Docker Image of the PhilipsSDK2.0 created for the requirements of the [TIAToolbox](https://github.com/TissueImageAnalytics/tiatoolbox).
+Docker Image of the Philips SDK 2.0-L1 created for TIA Centre.
 
 ### Image Contents
-Operating System: Ubuntu 18.04
+Operating System: Ubuntu 20.04
 
-Python Version: 3.6.9
+Python Version: 3.8.10
 
-Pip Version: 21.3.1
+Pip Version: 22.1.2
 
 Linux Packages
-1. libopenjp2-7-dev libopenjp2-tools
-2. libtiff5-dev
-3. openslide-tools
-4. libgl1
+1. libtiff5-dev
 
 Extras  
-Philips PathologySDK 2.0 Research
+Philips PathologySDK 2.0-L1 Research
 
 ### Pull the image from the Github Container Registry:
 ```bash
-docker pull ghcr.io/tissueimageanalytics/philips-sdk:2.0
+docker pull ghcr.io/tissueimageanalytics/philips-sdk:2.0l1
 ```
 ### Use the image as a base image in a Dockerfile:
 ```bash
-FROM ghcr.io/tissueimageanalytics/philips-sdk:2.0
+FROM ghcr.io/tissueimageanalytics/philips-sdk:2.0l1
 ```
 ### Build the image locally:
 1. Navigate to the Dockerfile that you want to use, based on the Python version and Operating System that you prefer

@@ -1,5 +1,5 @@
-# Start from deterministic ubuntu 18.04 image
-FROM ubuntu:18.04@sha256:478caf1bec1afd54a58435ec681c8755883b7eb843a8630091890130b15a79af
+# Start from deterministic ubuntu 20.04 image
+FROM ubuntu:20.04@sha256:626ffe58f6e7566e00254b638eb7e0f3b11d4da9675088f4781a50ae288f3322
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -8,24 +8,19 @@ RUN apt-get -y update \
     && apt-get install -y python3-pip python3-dev \
     && cd /usr/local/bin \
     && ln -s /usr/bin/python3 python \
-    && pip3 install --upgrade pip \
-    && apt-get -y install --no-install-recommends \
-    libopenjp2-7-dev libopenjp2-tools \
-    libtiff5-dev \
-    openslide-tools \
-    libgl1 \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && pip3 install --upgrade pip
 
 # install the sdk and remove it
-COPY ./philips-pathologysdk-2.0-ubuntu18_04_py36_research /pathologysdk
+COPY ./philips-pathologysdk-2.0-L1-ubuntu20_04_py38_research /pathologysdk
 WORKDIR /pathologysdk
 
-RUN chmod 777 InstallPathologySDK.sh
-
-RUN ./InstallPathologySDK.sh
+RUN chmod 777 InstallPathologySDK.sh && ./InstallPathologySDK.sh -y
 
 WORKDIR /
 RUN rm -r /pathologysdk
+
+RUN apt-get install -y libtiff5-dev --no-install-recommends \    
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT [ "sh", "-c" ]

@@ -34,6 +34,8 @@ Command for big sparse tiff from level 0 of batch size 50:
 python3 /app/isyntax_to_tiff.py <Isyntax file path> 1 1 0 50
 ```
 
+note: The converted image will be stored in the working directory from which the script was executed
+
 ### Pull the image from the Github Container Registry:
 ```bash
 docker pull ghcr.io/tissueimageanalytics/isyntax2tiff:latest
